@@ -70,9 +70,12 @@ checkForUpdates() {
     fi
 }
 
-#Print Info
 gitDir=$(pwd)
 
+#Changing the default directory
+cd ~
+
+#Print Info
 if [ "$1" = "help" ];then
     info;
 # Install
