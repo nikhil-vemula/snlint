@@ -71,7 +71,7 @@ checkForUpdates() {
 }
 
 gitDir=$(pwd)
-
+echo $gitDir
 #Changing the default directory
 cd ~
 
