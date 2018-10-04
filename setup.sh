@@ -70,10 +70,6 @@ checkForUpdates() {
     fi
 }
 
-
-#Changing the default directory
-cd ~
-
 #Print Info
 gitDir=$(pwd)
 
