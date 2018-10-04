@@ -84,7 +84,6 @@ elif [ -z "$1" ] || $1 = "install" ] || [ $1 = "update" ]; then
         git clone https://code.devsnc.com/srinivasa-vemula/snlint.git
         install;
     else
-        echo "Snlint is already installed";
         cd snlint
         echo "Checking for updates....";
         checkForUpdates;
