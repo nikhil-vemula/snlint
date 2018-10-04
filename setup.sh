@@ -77,13 +77,10 @@ cd ~
 #Print Info
 gitDir=$(pwd)
 
-if [ -z $1 ]; then
-    info;
-
-elif [ $1 = "help" ];then
+if [ $1 = "help" ];then
     info;
 # Install
-elif [ $1 = "install" ] || [ $1 = "update" ]; then 
+elif [ -z $1 || $1 = "install" ] || [ $1 = "update" ]; then 
     if [ ! -d snlint ]; then
         git clone https://code.devsnc.com/srinivasa-vemula/snlint.git
         install;
