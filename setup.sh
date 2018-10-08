@@ -34,7 +34,8 @@ install() {
             cp ~/snlint/.pre-commit-config.yaml .pre-commit-config.yaml
             git rm --cached ./.pre-commit-config.yaml > /dev/null 2>&1
             pre-commit install
-            # pre-commit install --hook-type pre-push
+            pre-commit install --hook-type pre-push
+            pre-commit install --hook-type commit-msg
         done
         if [ ! -f /usr/local/bin/snlint ]; then
             ln -s ~/snlint/setup.sh /usr/local/bin/snlint
@@ -98,7 +99,8 @@ elif [ $1 = "uninstall" ]; then
         cd $(dirname $file)
         echo "Uninstalling the pre-commit hooks...."
         pre-commit uninstall
-        # pre-commit install -t pre-push
+        pre-commit uninstall --hook-type pre-push
+        pre-commit uninstall --hook-type commit-msg
         echo "Deleting config file $file"
         rm $file
     done
